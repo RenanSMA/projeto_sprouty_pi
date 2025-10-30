@@ -1,0 +1,13 @@
+{
+    "name": "renan-sma/projeto-sprouty-pi",
+    "description": "Projeto Integrador para ser entregue na aula de Programação para Internet.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
