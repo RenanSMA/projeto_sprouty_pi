@@ -20,4 +20,4 @@ Criar uma pasta para o projeto e rodar no cmd:
     composer install
 
 ## SE DER ERRO DE ROTA (404):
-    composer dump-autoload
+     adicionados."
