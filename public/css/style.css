@@ -353,3 +353,118 @@
     order: -1;
   }
 }
+
+    /* Estilos do cabeçalho e rodapé em VERDE, baseados nos códigos anteriores */
+
+    body {
+        /* Adicionei isso para evitar rolagem horizontal em telas pequenas */
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1;
+        /* Permite que o conteúdo principal ocupe o espaço restante */
+    }
+
+    /* === SUPER INFO (Top Bar Verde Escuro) === */
+    .super-info-bg {
+        background-color: #34700b;
+        color: #ffffff;
+    }
+
+    .super-info {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 10px;
+    }
+
+    .super-info p,
+    .super-info a {
+        margin: 0 10px 10px 10px;
+    }
+
+    .super-info a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    /* === MENU PRINCIPAL (Menu Bar Verde Claro) === */
+    .menu-bg {
+        background-color: #56960c;
+    }
+
+    .menu {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .menu-logo a {
+        font-size: 2.25em;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .menu-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-nav a {
+        font-size: 1.25em;
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-nav a:hover {
+        color: #a7eb5a;
+    }
+
+    /* === RODAPÉ === */
+    .footer {
+        background-color: #56960c;
+        color: #a7eb5a;
+        padding: 30px 0;
+        /* Aumentei o padding para ser mais notável */
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .footer p {
+        font-size: 1.5em;
+        /* Ajustei o tamanho da fonte */
+        margin: 0;
+    }
+
+
+    /* Estilos do conteúdo principal (mantidos) */
+    .dashboard-image-container {
+        padding: 30px 0;
+        background-color: #f8f9fa;
+    }
+
+    .dashboard-image {
+        width: 60%;
+        height: 40%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
