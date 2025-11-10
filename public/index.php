@@ -52,7 +52,7 @@ elseif ($url == '/produtos') {
 }
 
 elseif ($url == '/produtos/inserir') {
-    render('produtos/form_usuarios.php' , ['title' => 'Cadastrar produtos']);
+    render('produtos/form_produtos.php' , ['title' => 'Cadastrar produtos']);
 }
 
 

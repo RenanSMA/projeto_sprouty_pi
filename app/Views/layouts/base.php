@@ -29,23 +29,36 @@
                     <a href="#">Sprouty 🌱</a>
                 </div>
                 <nav class="menu-nav">
-                    <ul>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown"
-        >
-        Usuários
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
-        <li><a class="dropdown-item" href="/usuarios/inserir">Cadastro Usuários</a></li>
-        <li><a class="dropdown-item" href="/usuarios">Listagem Usuários</a></li>
-    </ul>
-</li>
-
-                        <li><a href="/ptodutos/inserir">Cadastro Produtos</a></li>
-                        <li><a href="/produtos">Listagem Produtos</a></li>
-                        <li><a href="/home">Dashboard</a></li>
-                        <li><a href="/">Login</a></li>
-                    </ul>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produtos/form_produtos.php">Cadastrar Produto</a></li>
+                            <li><a class="dropdown-item" href="produtos/lista_produtos.php">Listar Produtos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Vendas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="registro-venda.html">Registrar Venda</a></li>
+                            <li><a class="dropdown-item" href="lista-vendas.html">Listar Vendas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Usuários
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="usuarios/form_usuarios.php">Cadastrar Usuário</a></li>
+                            <li><a class="dropdown-item" href="usuarios/lista_usuarios.php">Listar Usuários</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 </nav>
             </div>
         </nav>
