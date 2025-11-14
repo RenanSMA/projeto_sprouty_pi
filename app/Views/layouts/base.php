@@ -32,30 +32,21 @@
                 <ul>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false" >
                             Produtos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="produtos/form_produtos.php">Cadastrar Produto</a></li>
-                            <li><a class="dropdown-item" href="produtos/lista_produtos.php">Listar Produtos</a></li>
+                            <li><a class="dropdown-item" href="/produtos/inserir">Cadastrar Produto</a></li>
+                            <li><a class="dropdown-item" href="/produtos">Listar Produtos</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Vendas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="registro-venda.html">Registrar Venda</a></li>
-                            <li><a class="dropdown-item" href="lista-vendas.html">Listar Vendas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
                             Usuários
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="usuarios/form_usuarios.php">Cadastrar Usuário</a></li>
-                            <li><a class="dropdown-item" href="usuarios/lista_usuarios.php">Listar Usuários</a></li>
+                            <li><a class="dropdown-item" href="/usuarios/inserir">Cadastrar Usuário</a></li>
+                            <li><a class="dropdown-item" href="/usuarios">Listar Usuários</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -66,7 +57,7 @@
     <div class="container"><?= $content ?> </div>
   
     <footer class="footer">
-        <p>Sprouty © Todos os direitos reservados.</p>
+        <p>Sprouty © Todos os direitos reservados.  - Desenvolvido por Fernando Bernini e Renan Santos</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

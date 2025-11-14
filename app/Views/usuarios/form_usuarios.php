@@ -78,7 +78,7 @@
                         <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000">
                     </div>
                     <div class="col-md-7">
-                        <label for="endereco" class="form-label">Endereço</label>
+                        <label for="endereco" class="form-label">Rua</label>
                         <input type="text" id="endereco" name="endereco" class="form-control"
                             placeholder="Rua, avenida, etc.">
                     </div>
@@ -134,7 +134,7 @@
 
                 <div class="row pt-3 border-top">
                     <div class="col-md-6">
-                        <a href="dashboard.html" class="btn btn-link">Voltar</a>
+                        <a href="/usuarios" class="btn btn-light">Voltar</a>
                     </div>
                     <div class="col-md-6 text-end">
                         <button type="reset" class="btn btn-secondary me-2">Limpar</button>

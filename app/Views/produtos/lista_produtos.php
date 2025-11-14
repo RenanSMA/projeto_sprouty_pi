@@ -5,7 +5,7 @@
 
         <div class="row mb-3">
             <div class="col-md-4 mb-2">
-                <a href="/cadastro-produto.html" class="btn btn-success">
+                <a href="/produtos/inserir" class="btn btn-success">
                     <i class="bi bi-plus-circle-fill"></i> Novo Produto
                 </a>
             </div>

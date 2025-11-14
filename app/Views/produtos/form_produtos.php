@@ -48,7 +48,7 @@
 
                 <div class="row pt-3 border-top">
                     <div class="col-md-6">
-                        <a href="dashboard.html" class="btn btn-link">Voltar</a>
+                        <a href="/produtos" class="btn btn-light">Voltar</a>
                     </div>
                     <div class="col-md-6 text-end">
                         <button type="reset" class="btn btn-secondary me-2">Limpar</button>
