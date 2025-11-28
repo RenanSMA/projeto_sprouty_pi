@@ -27,6 +27,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Produto</th>
                                 <th scope="col">Categoria</th>
+                                <th scope="col">Descrição</th>
                                 <th scope="col">Preço (R$)</th>
                                 <th scope="col">Estoque</th>
                                 <th scope="col" class="text-center">Ações</th>
