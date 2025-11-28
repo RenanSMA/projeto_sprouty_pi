@@ -52,12 +52,12 @@ if (empty($dados['nome'])) {
  //se nao houver erros salve 
  if(empty($erros)) {
     $id = Usuario::salvar($dados);
-   // header('Location: /usuarios');
+   header('Location: /usuarios');
  } else {
     //se houver erros volta para o formulario
     $_SESSION['erros'] = $erros;
     $_SESSION['dados'] = $dados;
-    //header('Location: /usuarios/inserir');
+    header('Location: /usuarios/inserir');
  }
 
 

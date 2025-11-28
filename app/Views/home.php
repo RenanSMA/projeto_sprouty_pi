@@ -1,4 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><?=$title?></title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="super-info-bg">
+    <div class="super-info">
+      <p>Seg / Sex - 07:00 às 15:00</p>
+      <a href="tel:+552199999999">+55 19 9999-9999</a>
+      <p>Av. Tom Traugott Wildi, 100 – Praia Brava, Florianópolis – SC</p>
+    </div>
+  </div>
+
+  <header class="menu-bg">
+    <div class="menu">
+      <div class="menu-logo">
+        <a href="#">Sprouty 🌱</a>
+      </div>
+      <nav class="menu-nav">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Planos</a></li>
+          <li><a href="#preco">Preço</a></li>
+          <li><a href="#qualidade">Contribuições</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <h1 class="introducao">Novos valores e<br>Práticas Sustentáveis</h1>
 
@@ -125,3 +162,11 @@
       <button type="submit">Assinar</button>
     </form>
   </section>
+
+  <footer class="footer">
+    <p>Sproty © Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>

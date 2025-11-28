@@ -35,12 +35,10 @@
         <!-- Itens do Menu -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                    <a class="nav-link text-white" href="/home">Início</a>
-                </li>
+
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/dashboard">Dashboard</a>
+                    <a class="nav-link text-white" href="/home">Dashboard</a>
                 </li>
 
                 <!-- Dropdown Produtos -->

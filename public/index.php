@@ -39,11 +39,9 @@ elseif ($url == '/sobre') {
     render('sobre.php' , ['title' => 'Bem vindo!']);
 }
 elseif ($url == '/home') {
-    render('home.php' , ['title' => 'Início']);
+    render('dashboard.php' , ['title' => 'Início']);
 }
-elseif ($url == '/dashboard') {
-    render('dashboard.php' , ['title' => 'Dashboard']);
-}
+
 //usuarios 
 
 

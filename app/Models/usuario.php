@@ -28,16 +28,17 @@ try{
     $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
     $sql = "INSERT INTO usuarios (
-    nome, genero, cpf, data_nascimento, celular,rua, numero, complemento, bairro, cidade, cep, estado,email, nivel_acesso, senha";
-    $sql .= "VALUES  (:nome, :genero, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado,email, :nivel_acesso, :senha)";
+    nome, genero, cpf, data_nascimento, celular,rua, numero, complemento, bairro, cidade, cep, estado, email, nivel_acesso, senha) ";
+    $sql .= " VALUES  (:nome, :genero, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado, :email, :nivel_acesso, :senha)";
 //prepara o sql para ser inserido no banco de dados e limpa codigos maliciosos
     $stmt = $pdo->prepare($sql);
 
     //passa as variaveis para o sql
 
     $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+    $stmt->bindParam(':genero', $dados['genero'], PDO::PARAM_STR);
     $stmt->bindParam(':cpf', $dados['cpf'], PDO::PARAM_STR);
-    $stmt->bindParam(':data_nascimento', $dados['data_nascimento'], PDO::PARAM_STR);
+    $stmt->bindParam(':data_nascimento', $dados['data_nascimento']);
     $stmt->bindParam(':celular', $dados['celular'], PDO::PARAM_STR);
     $stmt->bindParam(':rua', $dados['rua'], PDO::PARAM_STR);
     $stmt->bindParam(':numero', $dados['numero'], PDO::PARAM_STR);
@@ -48,8 +49,7 @@ try{
     $stmt->bindParam(':estado', $dados['estado'], PDO::PARAM_STR);
     $stmt->bindParam(':email', $dados['email'], PDO::PARAM_STR);
     $stmt->bindParam(':nivel_acesso', $dados['nivel_acesso'], PDO::PARAM_STR);
-    $stmt->bindParam(':genero', $dados['genero'], PDO::PARAM_STR);
-    $stmt->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
+    $stmt->bindParam(':senha',  $senha_criptografada);
    
 //executa o sql
 $stmt->execute();

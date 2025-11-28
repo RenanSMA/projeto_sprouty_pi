@@ -61,7 +61,7 @@ class ProdutoController{
     
             $id = Produto::salvar($dados); // chama o Model Produto
     
-          //  header('Location: /produtos');
+          header('Location: /produtos');
             exit;
     
         } else {
@@ -69,7 +69,7 @@ class ProdutoController{
             $_SESSION['erros'] = $erros;
             $_SESSION['dados'] = $dados;
     
-           // header('Location: /produtos/inserir');
+            header('Location: /produtos/inserir');
             exit;
         }
     }
