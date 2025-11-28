@@ -375,3 +375,18 @@
     .preco .preco-item:nth-child(2) { order: -1; }
   }
   
+  .navbar .dropdown-menu {
+    background-color: #198754 !important; /* mesmo verde do bg-success */
+    border: none;
+}
+
+/* Itens brancos no dropdown */
+.navbar .dropdown-item {
+    color: #ffffff !important;
+}
+
+/* Hover mais escuro */
+.navbar .dropdown-item:hover {
+    background-color: #146c43 !important; /* verde mais escuro */
+    color: #ffffff !important;
+}

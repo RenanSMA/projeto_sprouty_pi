@@ -22,37 +22,58 @@
                 <p>Av. Tom Traugott Wildi, 100 – Praia Brava, Florianópolis – SC</p>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand text-white" href="#">Sprouty 🌱</a>
 
-        <nav class="menu-bg">
-            <div class="menu">
-                <div class="menu-logo">
-                    <a href="#">Sprouty 🌱</a>
-                </div>
-                <nav class="menu-nav">
-                <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false" >
-                            Produtos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/produtos/inserir">Cadastrar Produto</a></li>
-                            <li><a class="dropdown-item" href="/produtos">Listar Produtos</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
-                            Usuários
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/usuarios/inserir">Cadastrar Usuário</a></li>
-                            <li><a class="dropdown-item" href="/usuarios">Listar Usuários</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                </nav>
-            </div>
-        </nav>
+        <!-- Botão Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Itens do Menu -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                    <a class="nav-link text-white" href="/home">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/dashboard">Dashboard</a>
+                </li>
+
+                <!-- Dropdown Produtos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="produtosDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+                        <li><a class="dropdown-item" href="/produtos/inserir">Cadastrar Produto</a></li>
+                        <li><a class="dropdown-item" href="/produtos">Listar Produtos</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dropdown Usuários -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="usuariosDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuários
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
+                        <li><a class="dropdown-item" href="/usuarios/inserir">Cadastrar Usuário</a></li>
+                        <li><a class="dropdown-item" href="/usuarios">Listar Usuários</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
     </header>
     <div class="container"><?= $content ?> </div>
   

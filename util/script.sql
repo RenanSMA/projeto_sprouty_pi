@@ -25,3 +25,26 @@ CREATE TABLE usuarios (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
     deleted_at TIMESTAMP NULL DEFAULT NULL -- marcação de exclusão lógica
 );
+
+CREATE TABLE produtos (
+    id_produto BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, -- identificador único do produto
+    nome VARCHAR(255) NOT NULL, -- nome do produto
+    categoria VARCHAR(255) NOT NULL, -- categoria do produto
+    descricao TEXT, -- descrição detalhada
+    valor_unitario DECIMAL(10,2) NOT NULL, -- preço por unidade
+    quantidade INT UNSIGNED NOT NULL DEFAULT 0, -- quantidade em estoque
+    
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- data de criação
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
+    deleted_at TIMESTAMP NULL DEFAULT NULL -- exclusão lógica
+);
+
+INSERT INTO produtos (nome, categoria, descricao, valor_unitario, quantidade)
+VALUES 
+('Adubo Orgânico Premium', 'Outros', 'Adubo composto 100% natural para fortalecimento do solo.', 39.90, 120),
+
+('Semente de Tomate Cereja', 'Sementes', 'Sementes selecionadas de tomate cereja para cultivo doméstico.', 8.50, 300),
+
+('Regador de 2 Litros', 'Outros', 'Regador plástico resistente com bico longo para irrigação precisa.', 24.99, 45),
+
+('Kit de Vasos Decorativos', 'Outros', 'Conjunto com 3 vasos cerâmicos para plantas de pequeno porte.', 89.00, 25);

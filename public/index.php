@@ -1,7 +1,9 @@
 <?php
+session_start(); //inicia sessão
 //Importa o autoload do Composer para carregar as rotas.
 require __DIR__ . '/../vendor/autoload.php';
 
+use App\Controllers\ProdutoController;
 use App\Controllers\UsuarioController;
 
 // funcao para renderizar as telas com layout
@@ -36,6 +38,12 @@ if ($url == "/" ||  $url == "/index.php") {
 elseif ($url == '/sobre') {
     render('sobre.php' , ['title' => 'Bem vindo!']);
 }
+elseif ($url == '/home') {
+    render('home.php' , ['title' => 'Início']);
+}
+elseif ($url == '/dashboard') {
+    render('dashboard.php' , ['title' => 'Dashboard']);
+}
 //usuarios 
 
 
@@ -44,10 +52,19 @@ elseif ($url == '/usuarios') {
   $controller->listar();
 }
 
+elseif ($url == '/produtos') {
+    $controller = new ProdutoController();
+    $controller->listar();
+  }
+
 
 
 elseif ($url == '/usuarios/inserir') {
     render('usuarios/form_usuarios.php' , ['title' => 'Cadastrar usuários']);
+}
+else if ($url == "/usuarios/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    $controller = new UsuarioController();
+    $controller->salvar();
 }
 // Produtos
 elseif ($url == '/produtos') {
@@ -56,10 +73,15 @@ elseif ($url == '/produtos') {
 
 elseif ($url == '/produtos/inserir') {
     render('produtos/form_produtos.php' , ['title' => 'Cadastrar produtos']);
+    
 }
 
+else if ($url == "/produtos/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    $controller = new ProdutoController();
+    $controller->salvar();
 
 
+}
 
 
 ?>

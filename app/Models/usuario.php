@@ -30,8 +30,31 @@ try{
     $sql = "INSERT INTO usuarios (
     nome, genero, cpf, data_nascimento, celular,rua, numero, complemento, bairro, cidade, cep, estado,email, nivel_acesso, senha";
     $sql .= "VALUES  (:nome, :genero, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado,email, :nivel_acesso, :senha)";
-
+//prepara o sql para ser inserido no banco de dados e limpa codigos maliciosos
     $stmt = $pdo->prepare($sql);
+
+    //passa as variaveis para o sql
+
+    $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+    $stmt->bindParam(':cpf', $dados['cpf'], PDO::PARAM_STR);
+    $stmt->bindParam(':data_nascimento', $dados['data_nascimento'], PDO::PARAM_STR);
+    $stmt->bindParam(':celular', $dados['celular'], PDO::PARAM_STR);
+    $stmt->bindParam(':rua', $dados['rua'], PDO::PARAM_STR);
+    $stmt->bindParam(':numero', $dados['numero'], PDO::PARAM_STR);
+    $stmt->bindParam(':complemento', $dados['complemento'], PDO::PARAM_STR);
+    $stmt->bindParam(':bairro', $dados['bairro'], PDO::PARAM_STR);
+    $stmt->bindParam(':cidade', $dados['cidade'], PDO::PARAM_STR);
+    $stmt->bindParam(':cep', $dados['cep'], PDO::PARAM_STR);
+    $stmt->bindParam(':estado', $dados['estado'], PDO::PARAM_STR);
+    $stmt->bindParam(':email', $dados['email'], PDO::PARAM_STR);
+    $stmt->bindParam(':nivel_acesso', $dados['nivel_acesso'], PDO::PARAM_STR);
+    $stmt->bindParam(':genero', $dados['genero'], PDO::PARAM_STR);
+    $stmt->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
+   
+//executa o sql
+$stmt->execute();
+//retorna o ID de registro no BD
+return(int) $pdo->lastInsertId();
 
 }catch (PDOException $e){
     echo "Erro ao inserir: " . $e->getMessage();

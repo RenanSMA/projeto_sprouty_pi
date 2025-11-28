@@ -5,7 +5,7 @@
 
         <div class="form-section mx-auto col-lg-10 col-xl-8">
 
-            <form>
+        <form action="/produtos/salvar" method="POST">
                 <h5 class="mb-3 text-success">Informações do Produto</h5>
 
                 <div class="row g-3 mb-4">
@@ -59,8 +59,3 @@
             </form>
         </div>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>

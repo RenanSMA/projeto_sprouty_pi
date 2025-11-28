@@ -33,52 +33,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Adubo Orgânico Premium</td>
-                                <td>Jardinagem</td>
-                                <td>59,90</td>
-                                <td>120</td>
-                                <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
-                                        <i class="bi bi-pencil-fill"></i> Editar
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
-                                        <i class="bi bi-trash-fill"></i> Excluir
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Regador Verde 2L</td>
-                                <td>Ferramentas</td>
-                                <td>29,90</td>
-                                <td>85</td>
-                                <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
-                                        <i class="bi bi-pencil-fill"></i> Editar
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
-                                        <i class="bi bi-trash-fill"></i> Excluir
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Sementes de Manjericão</td>
-                                <td>Hortaliças</td>
-                                <td>9,90</td>
-                                <td>300</td>
-                                <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
-                                        <i class="bi bi-pencil-fill"></i> Editar
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" title="Excluir">
-                                        <i class="bi bi-trash-fill"></i> Excluir
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
+    <?php foreach($produtos as $p): ?>    
+    <tr>
+        <th scope="row"><?= $p['id_produto'] ?></th>
+        <td><?= $p['nome'] ?></td>
+        <td><?= $p['categoria'] ?></td>
+        <td><?= $p['descricao'] ?></td>
+        <td>R$ <?= number_format($p['valor_unitario'], 2, ',', '.') ?></td>
+        <td><?= $p['quantidade'] ?></td>
+        <td class="text-center">
+            <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                <i class="bi bi-pencil-fill"></i> Editar
+            </button>
+            <button class="btn btn-sm btn-outline-danger" title="Excluir">
+                <i class="bi bi-trash-fill"></i> Excluir
+            </button>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</tbody>
+
                     </table>
                 </div>
             </div>
@@ -99,7 +73,3 @@
 
    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
