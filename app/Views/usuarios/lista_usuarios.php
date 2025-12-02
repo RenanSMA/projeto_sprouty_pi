@@ -1,28 +1,69 @@
-
-
 <main class="container my-5">
-    <h2 class="text-center mb-4">Listagem de Usuários Cadastrados</h2>
+    <!-- container = cria margem lateral automática e limita a largura do conteúdo -->
+    <!-- my-5 = adiciona margem vertical (topo e baixo) tamanho 5 -->
+    
+    <h2 class="text-center mb-4">
+        <!-- text-center = centraliza o texto -->
+        <!-- mb-4 = margem inferior maior -->
+        Listagem de Usuários Cadastrados
+    </h2>
 
     <div class="row mb-3">
+        <!-- row = cria uma linha do grid Bootstrap -->
+        <!-- mb-3 = margem inferior -->
+
         <div class="col-md-4 mb-2">
+            <!-- col-md-4 = ocupa 4 colunas no grid (em telas médias+) -->
+            <!-- mb-2 = margem inferior para melhor espaçamento no mobile -->
+            
             <a href="/usuarios/inserir" class="btn btn-success">
-                <i class="bi bi-plus-circle-fill"></i> Novo Usuário
+                <!-- btn = classe base de botão Bootstrap -->
+                <!-- btn-success = botão verde -->
+                <i class="bi bi-plus-circle-fill"></i> <!-- ícone Bootstrap Icons -->
+                Novo Usuário
             </a>
         </div>
+
         <div class="col-md-8">
+            <!-- col-md-8 = ocupa 8 colunas (complementa os 4 anteriores) -->
+
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar por nome, e-mail ou CPF" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <!-- d-flex = coloca os itens lado a lado -->
+                <input class="form-control me-2" type="search" 
+                       placeholder="Buscar por nome, e-mail ou CPF">
+                <!-- form-control = estiliza inputs -->
+                <!-- me-2 = margem à direita -->
+
+                <button class="btn btn-outline-success" type="submit">
+                    <!-- btn-outline-success = botão verde com borda, estilo "leve" -->
+                    Buscar
+                </button>
             </form>
         </div>
     </div>
 
     <div class="card shadow-sm border-0">
+        <!-- card = componente visual do Bootstrap para caixas -->
+        <!-- shadow-sm = adiciona sombra suave -->
+        <!-- border-0 = remove bordas do card -->
+
         <div class="card-body p-0">
+            <!-- card-body = área interna do card -->
+            <!-- p-0 = remove padding para que a tabela encoste nas bordas -->
+            
             <div class="table-responsive">
+                <!-- Permite rolagem horizontal se a tabela ficar grande -->
+
                 <table class="table table-striped table-hover align-middle mb-0">
+                    <!-- table = ativa formatação de tabela do Bootstrap -->
+                    <!-- table-striped = linhas listradas -->
+                    <!-- table-hover = destaque ao passar mouse -->
+                    <!-- align-middle = células alinhadas verticalmente ao meio -->
+                    <!-- mb-0 = remove margem inferior -->
+
                     <thead>
                         <tr>
+                            <!-- Cabeçalho da tabela -->
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Gênero</th>
@@ -36,10 +77,14 @@
                             <th scope="col">E-mail</th>
                             <th scope="col">Nível de Acesso</th>
                             <th scope="col" class="text-center">Ações</th>
+                            <!-- text-center = centraliza o conteúdo -->
                         </tr>
                     </thead>
+
                     <tbody>
                         <?php foreach($usuarios as $u): ?>    
+                        <!-- Loop PHP para listar todos os usuários -->
+
                         <tr>
                             <th scope="row"><?= $u['id_usuario'] ?></th>
                             <td><?= $u['nome'] ?></td>
@@ -47,19 +92,26 @@
                             <td><?= $u['cpf'] ?></td>
                             <td><?= date('d/m/Y', strtotime($u['data_nascimento'])) ?></td>
                             <td><?= $u['celular'] ?></td>
+
                             <td>
+                                <!-- Exibe endereço completo -->
                                 <?= $u['rua'] ?>, <?= $u['numero'] ?>
+                                
                                 <?php if(!empty($u['complemento'])): ?>
                                     - <?= $u['complemento'] ?>
                                 <?php endif; ?>
+
                                 <br>
                                 <?= $u['bairro'] ?>
                             </td>
+
                             <td><?= $u['cidade'] ?></td>
                             <td><?= $u['cep'] ?></td>
                             <td><?= $u['estado'] ?></td>
                             <td><?= $u['email'] ?></td>
+
                             <td>
+                                <!-- Badge = etiquetas coloridas do Bootstrap -->
                                 <span class="badge 
                                     <?= $u['nivel_acesso'] == 'Administrador' ? 'bg-success' : '' ?>
                                     <?= $u['nivel_acesso'] == 'Funcionário' ? 'bg-primary' : '' ?>
@@ -68,28 +120,57 @@
                                     <?= $u['nivel_acesso'] ?>
                                 </span>
                             </td>
+
                             <td class="text-center">
+                                <!-- text-center = centraliza botões de ação -->
+
                                 <button class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                                    <!-- btn-sm = botão pequeno -->
+                                    <!-- outline-primary = botão azul com borda -->
+                                    <!-- me-2 = margem à direita -->
                                     <i class="bi bi-pencil-fill"></i> Editar
                                 </button>
+
                                 <button class="btn btn-sm btn-outline-danger" title="Excluir">
+                                    <!-- outline-danger = botão vermelho com borda -->
                                     <i class="bi bi-trash-fill"></i> Excluir
                                 </button>
                             </td>
                         </tr>
+
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="card-footer bg-light d-flex justify-content-center">
+            <!-- card-footer = rodapé do card -->
+            <!-- bg-light = fundo cinza claro -->
+            <!-- d-flex + justify-content-center = centraliza os itens -->
+            
             <nav aria-label="Paginação da Lista">
                 <ul class="pagination mb-0">
-                    <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <!-- pagination = componente de paginação -->
+                    <!-- mb-0 = sem margem inferior -->
+
+                    <li class="page-item disabled">
+                        <!-- page-item = item da paginação -->
+                        <!-- disabled = desativado (não clicável) -->
+                        <a class="page-link" href="#">Anterior</a>
+                    </li>
+
+                    <li class="page-item active">
+                        <!-- active = página atual -->
+                        <a class="page-link" href="#">1</a>
+                    </li>
+
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#">Próxima</a>
+                    </li>
                 </ul>
             </nav>
         </div>

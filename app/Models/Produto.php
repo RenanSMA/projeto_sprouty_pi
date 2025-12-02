@@ -1,54 +1,63 @@
 <?php 
-// Em qual pasta ele está
+
+// Define o namespace da classe, mantendo organização do projeto
 namespace App\Models;
 
 use PDO; 
-use App\Core\Database;
+use App\Core\Database;  // Importa a classe Database que gerencia a conexão
 use PDOException;
 
-// Mesmo nome do Arquivo
+// Nome da classe deve coincidir com o arquivo: Produto.php
 class Produto {
- 
-    // Aqui declaramos uma função para cada operação do CRUD
 
-    // Buscar todos os usuários no BD
+    // =============================================================
+    // FUNÇÃO BUSCAR TODOS OS PRODUTOS
+    // =============================================================
     public static function buscarTodos(){
-        // Primeiro vamos conectar no Banco de Dados
-        // Precisamos importar o PDO antes de a classe
-        // Como vamos utilizar arquivo DATABASE, importamos ele também
+        // Conecta ao banco usando a classe Database
         $pdo = Database::conectar();
 
-        // Geramos o Script SQL de consulta
+        // Cria o SQL que busca todos os registros da tabela produtos
         $sql = "SELECT * FROM produtos";
 
-        // Retornamos o resultado da consulta
+        // Executa a consulta e retorna todos os resultados como array associativo
         return $pdo->query($sql)->fetchAll();
     }
 
+    // =============================================================
+    // FUNÇÃO SALVAR PRODUTO
+    // =============================================================
     public static function salvar($dados){
-       try{
-        $pdo = Database::conectar();
+        try {
+            // Conecta ao banco
+            $pdo = Database::conectar();
 
-        
-        $sql = "INSERT INTO produtos (nome, descricao, quantidade, valor_unitario, categoria)";
-        $sql .= " VALUES (:nome, :descricao, :quantidade, :valor_unitario, :categoria)";
+            // SQL com placeholders para prevenção de SQL injection
+            $sql = "INSERT INTO produtos (nome, descricao, quantidade, valor_unitario, categoria) 
+                    VALUES (:nome, :descricao, :quantidade, :valor_unitario, :categoria)";
 
-        // Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
-        $stmt = $pdo->prepare($sql);
+            // Prepara o statement (limpa os dados antes de inserir)
+            $stmt = $pdo->prepare($sql);
 
-        // Passa as variaveis para o SQL
-        $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
-        $stmt->bindParam(':descricao', $dados['descricao'], PDO::PARAM_STR);
-        $stmt->bindParam(':quantidade', $dados['quantidade'], PDO::PARAM_STR);
-        $stmt->bindParam(':valor_un', $dados['valor_unitario'], PDO::PARAM_STR);
-        $stmt->bindParam(':categoria', $dados['categoria'], PDO::PARAM_STR);
-       
-    }catch (PDOException $e){
-        echo "Erro ao inserir: " . $e->getMessage();
-        exit;
-    }
-        
+            // Vincula os valores do array $dados aos placeholders do SQL
+            $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+            $stmt->bindParam(':descricao', $dados['descricao'], PDO::PARAM_STR);
+            $stmt->bindParam(':quantidade', $dados['quantidade'], PDO::PARAM_INT);
+            $stmt->bindParam(':valor_unitario', $dados['valor_unitario']); // PDO trata float automaticamente
+            $stmt->bindParam(':categoria', $dados['categoria'], PDO::PARAM_STR);
+
+            // Executa o INSERT
+            $stmt->execute();
+
+            // Retorna o ID do registro inserido
+            return $pdo->lastInsertId();
+
+        } catch (PDOException $e) {
+            // Caso ocorra erro, exibe a mensagem e interrompe o script
+            echo "Erro ao inserir produto: " . $e->getMessage();
+            exit;
+        }
     }
 }
 
-// Nota: Estou com um problema em conectar/entrar na lista de usuarios - os outros links estão OK - V.
+?>

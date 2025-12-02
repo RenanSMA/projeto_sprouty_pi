@@ -1,105 +1,105 @@
 /* ==========================
    ESTRUTURA GERAL
    ========================== */
-   body {
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-  
-  /* ==========================
-     SUPER INFO (barra superior)
-     ========================== */
-  .super-info-bg {
-    background-color: #34700b;
-    color: #ffffff;
-  }
-  
-  .super-info {
-    max-width: 960px;
+body {
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+    display: flex;      /* Define layout flexível para o body */
+    flex-direction: column; /* Organiza elementos verticalmente */
+    min-height: 100vh;  /* Garante que o body ocupe toda a altura da tela */
+}
+
+main {
+    flex: 1; /* Faz o main ocupar todo o espaço restante, empurrando o footer para baixo */
+}
+
+/* ==========================
+   SUPER INFO (barra superior)
+   ========================== */
+.super-info-bg {
+    background-color: #34700b; /* Fundo verde escuro da barra superior */
+    color: #ffffff;             /* Texto branco */
+}
+
+.super-info {
+    max-width: 960px;           /* Largura máxima centralizada */
+    margin: 0 auto;             /* Centraliza horizontalmente */
+    display: flex;              /* Layout flexível */
+    justify-content: space-between; /* Espaço entre os elementos */
+    flex-wrap: wrap;            /* Permite quebrar linha em telas menores */
+    padding-top: 10px;          /* Espaço superior interno */
+}
+
+.super-info p,
+.super-info a {
+    margin: 0 10px 10px; /* Margem horizontal de 10px e inferior de 10px */
+}
+
+.super-info a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #ffffff;        /* Texto branco */
+}
+
+/* ==========================
+   MENU PRINCIPAL
+   ========================== */
+.menu-bg {
+    background-color: #56960c; /* Fundo verde do menu */
+}
+
+.menu {
+    max-width: 960px;           /* Centraliza conteúdo */
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 10px;
-  }
-  
-  .super-info p,
-  .super-info a {
-    margin: 0 10px 10px;
-  }
-  
-  .super-info a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  
-  /* ==========================
-     MENU PRINCIPAL
-     ========================== */
-  .menu-bg {
-    background-color: #56960c;
-  }
-  
-  .menu {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 15px 0;
+    padding: 15px 0;            /* Espaçamento vertical */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .menu a {
+    flex-wrap: wrap;            /* Ajuste em telas menores */
+}
+
+.menu a {
     text-decoration: none;
-    color: #ffffff;
-  }
-  
-  .menu-logo a {
-    font-size: 2.25em;
+    color: #ffffff;             /* Links brancos */
+}
+
+.menu-logo a {
+    font-size: 2.25em;          /* Logo maior */
     font-weight: bold;
     margin: 0 10px;
-  }
-  
-  .menu-nav ul {
+}
+
+.menu-nav ul {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
+    list-style: none;           /* Remove bullets */
     padding: 0;
     margin: 0;
-  }
-  
-  .menu-nav a {
-    font-size: 1.25em;
+}
+
+.menu-nav a {
+    font-size: 1.25em;          /* Links do menu maiores */
     display: block;
     padding: 10px;
-  }
-  
-  .menu-nav a:hover {
-    color: #a7eb5a;
-  }
-  
-  /* ==========================
-     INTRODUÇÃO
-     ========================== */
-  .introducao {
-    font-size: 3em;
+}
+
+.menu-nav a:hover {
+    color: #a7eb5a;             /* Cor verde clara ao passar o mouse */
+}
+
+/* ==========================
+   INTRODUÇÃO
+   ========================== */
+.introducao {
+    font-size: 3em;              /* Texto grande para destaque */
     line-height: 1;
-    max-width: 960px;
+    max-width: 960px;            /* Centralizado */
     margin: 0 auto;
-    padding: 60px 10px;
-  }
-  
-  /* ==========================
-     SEÇÃO SOBRE
-     ========================== */
-  .sobre {
+    padding: 60px 10px;          /* Espaçamento vertical e horizontal */
+}
+
+/* ==========================
+   SEÇÃO SOBRE
+   ========================== */
+.sobre {
     border-top: 2px solid #56960c;
     border-bottom: 2px solid #56960c;
     max-width: 960px;
@@ -107,91 +107,92 @@
     padding: 60px 0;
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .sobre-info {
-    flex: 2 1 300px;
+}
+
+.sobre-info {
+    flex: 2 1 300px; /* Ocupa mais espaço em telas grandes, mínimo 300px */
     margin: 0 10px;
-  }
-  
-  .sobre-info h1 {
+}
+
+.sobre-info h1 {
     font-size: 3em;
     margin-bottom: .5em;
-  }
-  
-  .sobre-info p {
+}
+
+.sobre-info p {
     font-size: 1.25em;
     line-height: 1.4;
     margin-bottom: 1em;
-    color: #7c7c7c;
-  }
-  
-  .sobre-img {
-    flex: 1 1 160px;
+    color: #7c7c7c; /* Texto cinza */
+}
+
+.sobre-img {
+    flex: 1 1 160px; /* Ocupa menos espaço, mínimo 160px */
     margin: 0 10px;
-  }
-  
-  /* ==========================
-     PRODUTOS
-     ========================== */
-  .produtos {
+}
+
+/* ==========================
+   PRODUTOS
+   ========================== */
+.produtos {
     max-width: 960px;
-    margin: 60px auto;
-  }
-  
-  .produtos h1 {
+    margin: 60px auto; /* Espaçamento vertical e centralização */
+}
+
+.produtos h1 {
     font-size: 3em;
     margin: 0 10px 60px;
-  }
-  
-  .produtos-container {
+}
+
+.produtos-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite quebrar itens em várias linhas */
     align-items: flex-end;
-  }
-  
-  .produtos-item {
-    flex: 1 1 175px;
+}
+
+.produtos-item {
+    flex: 1 1 175px; /* Cada item ocupa mínimo de 175px */
     margin: 10px;
-  }
-  
-  .produtos-item h2 {
+}
+
+.produtos-item h2 {
     font-size: 3em;
     color: #a4a4a4;
     background-color: #f7f7f7;
     padding: 60px 20px;
-  }
-  
-  .purple { border-top: 8px solid #5a2c00; }
-  .pink   { border-top: 8px solid #4eafff; }
-  .blue   { border-top: 8px solid #164d00; }
-  
-  /* ==========================
-     PREÇOS
-     ========================== */
-  .preco {
+}
+
+/* Bordas coloridas diferentes para cada item */
+.purple { border-top: 8px solid #5a2c00; }
+.pink   { border-top: 8px solid #4eafff; }
+.blue   { border-top: 8px solid #164d00; }
+
+/* ==========================
+   PREÇOS
+   ========================== */
+.preco {
     background-color: #f7f7f7;
     padding: 60px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-  }
-  
-  .preco-item {
+}
+
+.preco-item {
     flex: 1 1 260px;
     border: 4px solid #ffffff;
     padding: 20px;
     margin: 10px;
-  }
-  
-  .preco-item h2 {
+}
+
+.preco-item h2 {
     font-size: 3em;
     color: #a4a4a4;
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .preco-item span {
+}
+
+.preco-item span {
     max-width: 300px;
     margin: 20px auto;
     display: block;
@@ -201,36 +202,36 @@
     border-top: 4px solid #ffffff;
     border-bottom: 4px solid #ffffff;
     font-size: 3em;
-  }
-  
-  .preco-item sup {
-    font-size: 1.5rem;
-  }
-  
-  .preco-item ul {
+}
+
+.preco-item sup {
+    font-size: 1.5rem; /* Para valores menores, como centavos */
+}
+
+.preco-item ul {
     max-width: 300px;
     margin: 20px auto;
     font-size: 1.25em;
     font-style: italic;
     color: #7c7c7c;
-  }
-  
-  .preco-item li {
+}
+
+.preco-item li {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espaço entre texto e ícone */
     align-items: center;
     margin-bottom: 15px;
-  }
-  
-  .preco-item li::after {
-    content: '';
+}
+
+.preco-item li::after {
+    content: ''; /* Pequeno círculo decorativo */
     width: 6px;
     height: 6px;
     background-color: #9fcf83;
     border-radius: 50%;
-  }
-  
-  .preco-item a {
+}
+
+.preco-item a {
     max-width: 300px;
     display: block;
     margin: 20px auto;
@@ -241,84 +242,84 @@
     font-size: 2.25em;
     padding: 15px 0;
     text-align: center;
-  }
-  
-  /* ==========================
-     QUALIDADE
-     ========================== */
-  .qualidade {
+}
+
+/* ==========================
+   QUALIDADE
+   ========================== */
+.qualidade {
     max-width: 960px;
     margin: 60px auto;
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .qualidade-item {
+}
+
+.qualidade-item {
     flex: 1 1 300px;
     margin: 20px 10px;
-  }
-  
-  .qualidade-item h2 {
+}
+
+.qualidade-item h2 {
     font-size: 2.25em;
     color: #a4a4a4;
     margin-bottom: 20px;
-  }
-  
-  .qualidade-item h2:before {
+}
+
+.qualidade-item h2:before {
     content: '';
     width: 8px;
     height: 30px;
     margin-right: 10px;
-    display: inline-block;
-  }
-  
-  .qualidade-item:nth-of-type(3n + 1) h2:before { background-color: #2E7D32; }
-  .qualidade-item:nth-of-type(3n + 2) h2:before { background-color: #4abecf; }
-  .qualidade-item:nth-of-type(3n + 3) h2:before { background-color: #D84315; }
-  
-  .qualidade-item p {
+    display: inline-block; /* Linha colorida antes do título */
+}
+
+.qualidade-item:nth-of-type(3n + 1) h2:before { background-color: #2E7D32; }
+.qualidade-item:nth-of-type(3n + 2) h2:before { background-color: #4abecf; }
+.qualidade-item:nth-of-type(3n + 3) h2:before { background-color: #D84315; }
+
+.qualidade-item p {
     font-size: 1.25em;
     line-height: 1.4;
     color: #7c7c7c;
-  }
-  
-  /* ==========================
-     NEWSLETTER
-     ========================== */
-  .newsletter {
+}
+
+/* ==========================
+   NEWSLETTER
+   ========================== */
+.newsletter {
     background-color: #f7f7f7;
-    padding: 60px calc((100% - 960px) / 2);
+    padding: 60px calc((100% - 960px) / 2); /* Centraliza horizontalmente */
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .newsletter-info {
+}
+
+.newsletter-info {
     flex: 1 1 240px;
     margin: 0 10px;
-  }
-  
-  .newsletter-info h1 {
+}
+
+.newsletter-info h1 {
     font-size: 3em;
     color: #a4a4a4;
-  }
-  
-  .newsletter-info p {
+}
+
+.newsletter-info p {
     font-size: 1.25em;
     font-style: italic;
     max-width: 230px;
     color: #7c7c7c;
     margin-bottom: 10px;
-  }
-  
-  .newsletter-form {
+}
+
+.newsletter-form {
     flex: 2 1 260px;
     margin: 0 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-  }
-  
-  .newsletter-form input {
+}
+
+.newsletter-form input {
     flex: 3 1 260px;
     font-size: 1.25em;
     color: #7c7c7c;
@@ -329,9 +330,9 @@
     padding: 15px 10px;
     margin: 0;
     border-radius: 0;
-  }
-  
-  .newsletter-form button {
+}
+
+.newsletter-form button {
     flex: 1 1 260px;
     font-family: "Nunito", Helvetica, Arial, sans-serif;
     font-size: 2.25em;
@@ -343,50 +344,52 @@
     border: 0;
     padding: 15px 10px;
     margin: 0;
-  }
-  
-  /* ==========================
-     RODAPÉ
-     ========================== */
-  .footer {
+}
+
+/* ==========================
+   RODAPÉ
+   ========================== */
+.footer {
     background-color: #56960c;
     color: #a7eb5a;
     padding: 30px 0;
     text-align: center;
-    margin-top: auto;
-  }
-  
-  .footer p {
+    margin-top: auto; /* Mantém o footer no final da página */
+}
+
+.footer p {
     font-size: 1.5em;
     margin: 0;
-  }
-  
-  /* ==========================
-     RESPONSIVIDADE
-     ========================== */
-  @media (max-width: 800px) {
+}
+
+/* ==========================
+   RESPONSIVIDADE
+   ========================== */
+@media (max-width: 800px) {
     .newsletter-form button { font-size: 1.5em; }
-  
+
     .preco {
       padding: 0 10px;
     }
-  
+
+    /* Reordena itens de preço para mobile */
     .preco .preco-item:nth-child(3) { order: -2; }
     .preco .preco-item:nth-child(2) { order: -1; }
-  }
-  
-  .navbar .dropdown-menu {
-    background-color: #198754 !important; /* mesmo verde do bg-success */
+}
+
+/* ==========================
+   DROPDOWN DO NAVBAR
+   ========================== */
+.navbar .dropdown-menu {
+    background-color: #198754 !important; /* Mesma cor verde do bg-success do Bootstrap */
     border: none;
 }
 
-/* Itens brancos no dropdown */
 .navbar .dropdown-item {
-    color: #ffffff !important;
+    color: #ffffff !important; /* Itens do menu branco */
 }
 
-/* Hover mais escuro */
 .navbar .dropdown-item:hover {
-    background-color: #146c43 !important; /* verde mais escuro */
+    background-color: #146c43 !important; /* Hover verde escuro */
     color: #ffffff !important;
 }
