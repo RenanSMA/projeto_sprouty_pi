@@ -37,7 +37,7 @@ class Usuario {
 
             // Cria o SQL de inserção usando placeholders para segurança
             $sql = "INSERT INTO usuarios (
-                nome, genero, cpf, nascimento, celular, endereco, numero, complemento, cidade, cep, estado, email, nivel_acesso, senha
+                nome, genero, cpf, data_nascimento, celular, rua, numero, complemento, cidade, cep, estado, email, nivel_acesso, senha
             ) VALUES (
                 :nome, :genero, :cpf, :nascimento, :celular, :endereco, :numero, :complemento, :cidade, :cep, :estado, :email, :nivel_acesso, :senha
             )";

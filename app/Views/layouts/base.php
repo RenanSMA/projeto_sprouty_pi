@@ -48,7 +48,7 @@
             <div class="container">
                 <!-- container: centraliza o conteúdo da navbar -->
 
-                <a class="navbar-brand text-white" href="#">Sprouty 🌱</a>
+                <a class="navbar-brand text-white" href="/home">Sprouty 🌱</a>
                 <!-- navbar-brand: estiliza o nome/logo da marca -->
                 <!-- text-white: força cor branca -->
 

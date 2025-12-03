@@ -29,7 +29,7 @@ function render_sem_template($view, $data = []) {
 // Obtem a URL do navegador.
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-if ($url == "/" ||  $url == "/index.php") {
+if ($url == "/" ||  $url == "/index.php" || $url == "/home"  ) {
     render_sem_template('home.php', [
         'title' => 'Bem vindos',
         'lenda' => 'agora eu sou uma lenda'
@@ -38,7 +38,7 @@ if ($url == "/" ||  $url == "/index.php") {
 elseif ($url == '/sobre') {
     render('sobre.php' , ['title' => 'Bem vindo!']);
 }
-elseif ($url == '/home') {
+elseif ($url == '/dashboard') {
     render('dashboard.php' , ['title' => 'Início']);
 }
 

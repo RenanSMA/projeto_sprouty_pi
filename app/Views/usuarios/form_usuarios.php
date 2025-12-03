@@ -36,14 +36,14 @@
                     <label for="nome" class="form-label">Nome</label>
                     <!-- form-label = estilização do rótulo -->
                     <input type="text" id="nome" name="nome" class="form-control"
-                        placeholder="Digite o nome completo">
+                        placeholder="Digite o nome completo" required>
                 </div>
 
                 <div class="col-md-6">
                     <label for="genero" class="form-label">Gênero</label>
-                    <select id="genero" name="genero" class="form-select">
+                    <select id="genero" name="genero" class="form-select" required>
                         <!-- form-select = estiliza o <select> -->
-                        <option selected disabled> Selecione </option>
+                        
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Outro">Outro</option>
@@ -83,8 +83,7 @@
 
                 <div class="col-md-6">
                     <label for="nivel_acesso" class="form-label">Nível de Acesso</label>
-                    <select id="nivel_acesso" name="nivel_acesso" class="form-select">
-                        <option selected disabled> Escolha </option>
+                    <select id="nivel_acesso" name="nivel_acesso" class="form-select" required>
                         <option value="cliente">Cliente</option>
                         <option value="colaborador">Colaborador</option>
                         <option value="administrador">Administrador</option>
