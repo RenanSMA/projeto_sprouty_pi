@@ -31,7 +31,7 @@
                     <!-- form-label: estilização padrão das labels -->
 
                     <input type="text" id="nome" name="nome" class="form-control"
-                        placeholder="Digite o nome do produto">
+                        placeholder="Digite o nome do produto" required>
                     <!-- form-control: estilização de campo -->
                     <!-- placeholder: texto de exemplo dentro do campo -->
                 </div>

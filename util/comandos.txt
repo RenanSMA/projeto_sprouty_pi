@@ -14,7 +14,7 @@ Criar uma pasta para o projeto e rodar no cmd:
 
 # Iniciar o servidor do PHP: 
 php -S localhost:8000 -t public
-   
+
 
 ## QUANDO ABRIR O PROJETO EM UM NOVO PC:
     composer install
